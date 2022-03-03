@@ -14,12 +14,12 @@
 //#include "04/MedianOfTwoSortedArrays.h"
 //#include "05/LongestPalindromicSubstring.h"
 //#include "06/ZigzagConversion.h"
-#include "07/reverseInteger.h"
-#include "11/ContainerWithMostWater.h"
+//#include "07/reverseInteger.h"
+//#include "11/ContainerWithMostWater.h"
 //#include "08/StringToIntegerAtoi.h"
 //#include "10/RegularExpressionMatching.h"
-#include "338/CountingBits.h"
-#include "1025/DivisorGame.h"
+//#include "338/CountingBits.h"
+//#include "1025/DivisorGame.h"
 
 
 #pragma clang diagnostic push
@@ -35,8 +35,7 @@ std::string getRandomPalindrome(int);
 int getRandomNumber(int start = 0, int length = 20);
 
 void getRandomVector(std::vector<int> &nums, int length = 20, int start = INT_MIN, int end = INT_MAX);
-
-long long getRandomLong(long long length = LONG_LONG_MAX);
+long long getRandomLong(long long length = LLONG_MAX);
 
 //ListNode *getRandomList(int);
 
@@ -46,11 +45,6 @@ int main() {
     bool verbrose = false;
     while (curRun != noOfTimesToRun) {
         auto start = std::chrono::high_resolution_clock::now();
-        int n = getRandomNumber(0, 1000);
-        std::cout << n << std::endl;
-        DivisorGame divisorGame = DivisorGame();
-        auto x = divisorGame.divisorGame(624);
-        std::cout << x << std::endl;
         if (verbrose) {
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
@@ -141,7 +135,7 @@ long long getRandomLong(long long length) {
                     ).count()));
 
     std::mt19937 gen(seed);
-    std::uniform_int_distribution<long long> distrib(LONG_LONG_MIN, length);
+    std::uniform_int_distribution<long long> distrib(LLONG_MIN, length);
     return distrib(gen);
 }
 
